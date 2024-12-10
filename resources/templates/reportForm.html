@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="mk" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пријави Загадување</title>
+
+
+    <link th:href="@{/styles.css}" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+<div class="container">
+    <h1 class="header">Пријави извор на загадување</h1>
+
+    <form id="pollutionForm" class="form">
+        <button id="getLocation" type="button" class="location-btn">Лоцирај ме</button>
+        <p id="locationDisplay" class="location-display">Локација: Сѐ уште не е одредена</p>
+
+        <label for="description" class="form-label">Опис:</label>
+        <textarea id="description" name="description" class="form-input" required></textarea>
+
+        <label for="image" class="form-label">Прикачете слика:</label>
+        <input type="file" id="image" name="image" class="form-input">
+
+        <button type="submit" class="submit-btn">Пријави</button>
+    </form>
+
+    <div id="map" class="map"></div>
+    <ul id="reportList" class="report-list"></ul>
+</div>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script th:src="@{/script.js}"></script>
+</body>
+</html>
